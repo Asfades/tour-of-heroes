@@ -2,7 +2,8 @@
   <li *ngFor="let hero of heroes"
       class="heroes-list__item"
   >
-    <a routerLink="/detail/{{ hero.id }}">
+    <a class="heroes-list__link"
+        routerLink="/detail/{{ hero.id }}">
       <span class="heroes-list__item-badge">{{ hero.id }}</span>
       <span class="heroes-list__item-name">{{ hero.name }}</span>
     </a>

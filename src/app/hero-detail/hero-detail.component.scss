@@ -1,3 +1,21 @@
-app-hero-detail {
+.hero-detail {
+  display: flex;
+  flex-direction: column;
   margin: 20px auto;
+
+  &__gb-button {
+    width: 100px;
+  }
+
+  &__heading {
+    margin-top: 20px;
+  }
+
+  &__property-name {
+    font-weight: bold;
+
+    &-wrapper {
+      margin-top: 15px;
+    }
+  }
 }

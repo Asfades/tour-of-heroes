@@ -1,16 +1,20 @@
-<div *ngIf=hero>
-  <button class="go-back-button"
+<div class="hero-detail"
+    *ngIf=hero>
+  <button class="hero-detail__gb-button"
           (click)="goBack()"
-  >Go back</button>
-  <h2>
-    {{ hero.name | uppercase }} Details
+  >< Go back</button>
+  <h2 class="hero-detail__heading">
+    <span>{{ hero.name | uppercase }}</span> Details
   </h2>
-  <div>
-    <span>id: </span>{{ hero.id }}
+  <div class="hero-detail__property-name-wrapper">
+    <span class="hero-detail__property-name">id:&nbsp;</span>{{ hero.id }}
   </div>
   <div>
-    <label>name:
-      <input [(ngModel)]="hero.name" placeholder="name">
+    <label>
+      <span class="hero-detail__property-name">name:&nbsp;</span>
+      <input class="hero-detail__input"
+        [(ngModel)]="hero.name" placeholder="name"
+      >
     </label>
   </div>
 </div>
