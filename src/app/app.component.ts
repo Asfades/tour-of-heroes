@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'first-app';
+  title = 'Tour of Heroes';
+
+  onActivate(event): void {
+    console.log('onActivate event: ', event)
+  }
 }

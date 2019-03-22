@@ -1,0 +1,35 @@
+.heroes-list {
+	display: flex;
+	flex-direction: column;
+	width: 200px;
+	margin: 0 auto;
+
+	&__item {
+		background: rgb(236, 236, 236);
+		border-radius: 5px;
+		overflow: hidden;
+		cursor: pointer;
+		display: flex;
+		margin-top: 7px;
+
+		&_selected {
+			background: rgb(192, 192, 192);
+		}
+
+		&-name, &-badge {
+			padding: 7px;
+		}
+
+		&-name {
+			flex: 1;
+			text-align: start;
+		}
+
+		&-badge {
+			background: rgb(94, 94, 197);
+			color: rgb(236, 236, 236);
+		}
+	}
+}
+
+
