@@ -1,7 +1,7 @@
-import { HeroService } from './../hero.service';
-import { Component, OnInit } from '@angular/core';
-import { Hero } from '../hero';
-// import { HEROES } from '../mock-heroes';
+import { HeroService } from '../hero.service'
+import { Component, OnInit } from '@angular/core'
+import { Hero } from '../hero'
+// import { HEROES } from '../mock-heroes'
 
 @Component({
   selector: 'app-heroes',
@@ -9,20 +9,34 @@ import { Hero } from '../hero';
   styleUrls: ['./heroes.component.scss']
 })
 export class HeroesComponent implements OnInit {
-  heroes: Array<Hero> = [];
+  heroes: Array<Hero> = []
 
-  // selectedHero: Hero;
+  // selectedHero: Hero
   // onSelect(hero: Hero): void {
-  //   this.selectedHero = hero;
+  //   this.selectedHero = hero
   // }
 
   constructor(private heroService: HeroService) {}
 
   ngOnInit() {
-    this.getHeroes();
+    this.getHeroes()
   }
 
   getHeroes(): void {
-    this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
+    this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes)
+  }
+
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.heroService.addHero({ name } as Hero)
+      .subscribe(hero => {
+        this.heroes.push(hero);
+      });
+  }
+
+  delete(hero: Hero): void {
+    this.heroes = this.heroes.filter(h => h !== hero);
+    this.heroService.deleteHero(hero).subscribe();
   }
 }

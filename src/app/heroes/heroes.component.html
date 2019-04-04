@@ -7,9 +7,21 @@
       <span class="heroes-list__item-badge">{{ hero.id }}</span>
       <span class="heroes-list__item-name">{{ hero.name }}</span>
     </a>
+    <button class="delete" title="delete hero"
+            (click)="delete(hero)">
+        x
+    </button>
   </li>
 </ul>
-
+<div>
+  <label>Hero name:
+    <input #heroName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(heroName.value); heroName.value=''">
+    add
+  </button>
+</div>
 <!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->
 <!-- <li *ngFor="let hero of heroes"
     (click)="onSelect(hero)"
